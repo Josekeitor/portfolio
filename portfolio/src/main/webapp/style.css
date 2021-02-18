@@ -2,8 +2,34 @@
   margin-left: auto;
   margin-right: auto;
   width: 650px;
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.social-links{
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+}
+
+#linkedin{
+    fill: #2867b2;
+}
+
+.social-links a svg{
+    width: 60%;
+}
+
+#profile-pic {
+    border-radius: 50%;
+    max-width: 20vw;
 }
 
 #greeting-container {
   margin-top: 20px;
 }
+
+
