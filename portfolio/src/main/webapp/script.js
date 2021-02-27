@@ -26,3 +26,16 @@ function addRandomGreeting() {
   const albumContainer = document.getElementById('album-container');
   albumContainer.innerText = album;
 }
+
+// Display project list
+
+function showProjects(){
+   const projectContainer = document.getElementById('project-container');
+   
+  if (projectContainer.style.display === "none") {
+    projectContainer.style.display = "block";
+  } else {
+    projectContainer.style.display = "none";
+  }
+
+}
