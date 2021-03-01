@@ -1,36 +1,10 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80vw;
-  height: 92vh;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.right{
-    display: flex;
-    flex-direction: column;
-}
-.social-links{
-    display: flex;
-    justify-content: space-evenly;
-    width: 40%;
+a {
+    text-decoration: none;
 }
 
-.left h1{
-    font-weight: bold;
-    width: 24vw;
-    
-}
-
-.left{
-    margin-right: 10vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+a:visited{
+    color: black;
+    text-decoration: none;   
 }
 
 .button-cluster button{
@@ -47,13 +21,38 @@
     color: white;
 }
 
+#content {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    height: 92vh;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+}
+
+#greeting-container {
+    margin-top: 20px;
+}
+
+.left{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10vw;
+}
+
+.left h1{
+    font-size: x-large;
+    font-weight: bold;
+    
+}
 
 #linkedin{
     fill: #2867b2;
-}
-
-.social-links a svg{
-    width: 60%;
 }
 
 #profile-pic {
@@ -61,24 +60,44 @@
     max-width: 20vw;
 }
 
-#greeting-container {
-  margin-top: 20px;
+.project-list{
+    margin-top: 3vh;
 }
-
 
 .project-list li{
     margin-top: 4vh;
 }
 
-.project-list{
-    margin-top: 3vh;
+.right{
+    display: flex;
+    flex-direction: column;
+}
+.social-links{
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
 }
 
-a {
-    text-decoration: none;
+.social-links a svg{
+    width: 60%;
 }
 
-a:visited{
-    text-decoration: none;
-    color: black;
+
+@media only screen and (max-width: 768px){
+
+  #content {
+    flex-direction: column;
+    height: auto;
+    margin-top: 2vh;
+  }
+
+  .left{
+      margin-right: auto;
+  }
+
+  #profile-pic {
+    
+    max-width: 40vw;
+  }
+
 }
