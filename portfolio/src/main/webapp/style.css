@@ -1,9 +1,103 @@
+a {
+    text-decoration: none;
+}
+
+a:visited{
+    color: black;
+    text-decoration: none;   
+}
+
+.button-cluster button{
+    border-radius: 30px;
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.button-cluster button:hover{
+    background-color: black;
+    color: white;
+}
+
 #content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    height: 92vh;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
 }
 
 #greeting-container {
-  margin-top: 20px;
+    margin-top: 20px;
+}
+
+.left{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10vw;
+}
+
+.left h1{
+    font-size: x-large;
+    font-weight: bold;
+    
+}
+
+#linkedin{
+    fill: #2867b2;
+}
+
+#profile-pic {
+    border-radius: 50%;
+    max-width: 20vw;
+}
+
+.project-list{
+    margin-top: 3vh;
+}
+
+.project-list li{
+    margin-top: 4vh;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+}
+.social-links{
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+}
+
+.social-links a svg{
+    width: 60%;
+}
+
+
+@media only screen and (max-width: 768px){
+
+  #content {
+    flex-direction: column;
+    height: auto;
+    margin-top: 2vh;
+  }
+
+  .left{
+      margin-right: auto;
+  }
+
+  #profile-pic {
+    
+    max-width: 40vw;
+  }
+
 }
