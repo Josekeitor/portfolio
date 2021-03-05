@@ -45,7 +45,5 @@ async function sayHello(){
     const text = await response.text();
 
     const greeting_container = document.getElementById('greeting-container');
-    new_text = text.replace("<h1>", "")
-    new_text = new_text.replace("</h1>","")
-    greeting_container.innerText = new_text
+    greeting_container.innerText = text;
 }
