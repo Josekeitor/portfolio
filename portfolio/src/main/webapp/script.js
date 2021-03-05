@@ -39,3 +39,11 @@ function showProjects(){
   }
 
 }
+
+async function sayHello(){
+    const response = await fetch("/hello");
+    const text = await response.text();
+
+    const greeting_container = document.getElementById('greeting-container');
+    greeting_container.innerText = text;
+}

@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
-  <body>
+  <body onload="sayHello()">
     <div id="content">
       <div class="left">
         <img src="images/profile-pic.jpg" id="profile-pic">
@@ -22,11 +22,14 @@
       
           
       <div class="right">
+        <h1 id="greeting-container"></h1>
         <p>6th semester C.S. student at Tecnológico de Monterrey.</p>
         <p> I am starting out in the tech industry and want to gain as much experience
           as I can while contrubuting to companies with my diverse talents in programming.
           Determined, team and goal oriented.
         </p>
+
+        
       
         <div class="button-cluster">
         <button onclick="showProjects()">Projects</button>
