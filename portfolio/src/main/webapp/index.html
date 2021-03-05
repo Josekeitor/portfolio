@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
-  <body onload="sayHello()">
+  <body onload="sayHello(), loadProjects()">
     <div id="content">
       <div class="left">
         <img src="images/profile-pic.jpg" id="profile-pic">
@@ -36,10 +36,7 @@
         </div>
       
         <div id="project-container" style="display: none;">
-          <ul class="project-list">
-            <li><a  target="_blank" href="https://github.com/CSI3374-SPM/un-scorecard-rn">UN Scorecard React Native Application</a></li>
-            <li><a  target="_blank" href="https://honey-db-project.herokuapp.com/">Honey administrative dashboard</a></li>
-            <li><a  href="https://github.com/me50/Josekeitor/tree/master">Harvard CS50 AI projects</a></li>
+          <ul id="project-list">
           </ul>
       
         </div>
