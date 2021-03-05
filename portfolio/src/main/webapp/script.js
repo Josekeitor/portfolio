@@ -31,7 +31,7 @@ function addRandomGreeting() {
 
 function showProjects(){
   const projectContainer = document.getElementById('project-container');
-   
+
   if (projectContainer.style.display === 'none') {
     projectContainer.style.display = 'block';
   } else {
