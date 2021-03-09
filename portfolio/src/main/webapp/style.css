@@ -60,11 +60,11 @@ a:visited{
     max-width: 20vw;
 }
 
-.project-list{
+#project-list{
     margin-top: 3vh;
 }
 
-.project-list li{
+#project-list li{
     margin-top: 4vh;
 }
 

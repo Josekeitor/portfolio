@@ -30,20 +30,33 @@ function addRandomGreeting() {
 // Display project list
 
 function showProjects(){
-   const projectContainer = document.getElementById('project-container');
-   
-  if (projectContainer.style.display === "none") {
-    projectContainer.style.display = "block";
+  const projectContainer = document.getElementById('project-container');
+
+  if (projectContainer.style.display === 'none') {
+    projectContainer.style.display = 'block';
   } else {
-    projectContainer.style.display = "none";
+    projectContainer.style.display = 'none';
   }
 
 }
 
+// Fetch hello message from servlet
+
 async function sayHello(){
-    const response = await fetch("/hello");
+    const response = await fetch('/hello');
     const text = await response.text();
 
     const greeting_container = document.getElementById('greeting-container');
     greeting_container.innerText = text;
+}
+
+// Fetch project list from servlet
+async function loadProjects(){
+  const projectList = document.getElementById('project-list');
+  const response = await fetch('/projects');
+  const projects = await response.json();
+
+  for(var i =0; i<projects.length; i++){
+      projectList.innerHTML += "<li> <a target= \"_blank\" href=\""+projects[i].url+"\">"+projects[i].name;
+  }
 }
