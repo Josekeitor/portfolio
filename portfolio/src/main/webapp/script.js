@@ -40,6 +40,19 @@ function showProjects(){
 
 }
 
+// Display pop up form
+
+function showForm(){
+    const formContainer = document.getElementById('contact-form-container');
+
+    if (formContainer.style.display === 'none'){
+        formContainer.style.display = 'block';
+    }else{
+        formContainer.style.display = 'none';
+    }
+}
+
+
 // Fetch hello message from servlet
 
 async function sayHello(){
@@ -60,3 +73,31 @@ async function loadProjects(){
       projectList.innerHTML += "<li> <a target= \"_blank\" href=\""+projects[i].url+"\">"+projects[i].name;
   }
 }
+
+function requestTranslation() {
+        const text = document.querySelectorAll('.txt');
+        const languageCode = document.getElementById('language').value;
+        console.log(text);
+        
+
+        
+        for(var i = 0; i<text.length; i++){
+            console.log(text[i].innerText);
+            console.log(languageCode);
+            const responseContainer = text[i];
+            const params = new URLSearchParams();
+            params.append('text', text[i].innerText);
+            params.append('languageCode', languageCode);
+            fetch('/translate', {
+          method: 'POST',
+          body: params
+        }).then(response => response.text())
+        .then((translatedMessage) => {
+            console.log("translation ", translatedMessage)
+            responseContainer.innerText = translatedMessage;
+        });
+        }
+        
+        
+        
+      }
