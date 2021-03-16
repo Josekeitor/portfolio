@@ -46,7 +46,6 @@ function showForm(){
     const formContainer = document.getElementById('contact-form-container');
     const right = document.getElementById('right-content');
 
-
     if (formContainer.style.display === 'none'){
         formContainer.style.display = 'block';
     }else{
@@ -58,19 +57,15 @@ function showForm(){
     }else{
         right.style.display = 'none';
     }    
-
-    
 }
 
-
 // Fetch hello message from servlet
-
 async function sayHello(){
-    const response = await fetch('/hello');
-    const text = await response.text();
+  const response = await fetch('/hello');
+  const text = await response.text();
+  const greeting_container = document.getElementById('greeting-container');
 
-    const greeting_container = document.getElementById('greeting-container');
-    greeting_container.innerText = text;
+  greeting_container.innerText = text;
 }
 
 // Fetch project list from servlet
@@ -84,30 +79,24 @@ async function loadProjects(){
   }
 }
 
+// Translate text elements
 function requestTranslation() {
-        const text = document.querySelectorAll('.txt');
-        const languageCode = document.getElementById('language').value;
-        console.log(text);
+  const textElements = document.querySelectorAll('.txt');
+  const languageCode = document.getElementById('language').value;
         
+  for(const textElement of textElements){
+    const responseContainer = textElement;
+    const params = new URLSearchParams();
 
+    params.append('text', textElement.innerText);
+    params.append('languageCode', languageCode);
         
-        for(var i = 0; i<text.length; i++){
-            console.log(text[i].innerText);
-            console.log(languageCode);
-            const responseContainer = text[i];
-            const params = new URLSearchParams();
-            params.append('text', text[i].innerText);
-            params.append('languageCode', languageCode);
-            fetch('/translate', {
-          method: 'POST',
-          body: params
-        }).then(response => response.text())
-        .then((translatedMessage) => {
-            console.log("translation ", translatedMessage)
-            responseContainer.innerText = translatedMessage;
-        });
-        }
-        
-        
-        
-      }
+    fetch('/translate', {
+      method: 'POST',
+      body: params
+    }).then(response => response.text())
+      .then((translatedMessage) => {
+        responseContainer.innerText = translatedMessage;
+      });
+    }  
+}

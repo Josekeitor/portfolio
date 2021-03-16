@@ -23,9 +23,8 @@ public class FormHandlerServlet extends HttpServlet {
     System.out.println("Text: " + textValue);
 
     // Write the value to the response so the user can see it.
-    response.getWriter().println("Email: " + email);
-    response.getWriter().println("Company: " + company);
-    response.getWriter().println("Text: " + textValue);
-response.sendRedirect("/");
+    response.setContentType("text/html;");
+    response.getWriter().println("<h3> Thank you! Your information has been sent.</h3>");
+    response.getWriter().println("<a href='/'> Go back </a>");
   }
 }
