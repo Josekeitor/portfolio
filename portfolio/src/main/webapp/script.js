@@ -44,12 +44,22 @@ function showProjects(){
 
 function showForm(){
     const formContainer = document.getElementById('contact-form-container');
+    const right = document.getElementById('right-content');
+
 
     if (formContainer.style.display === 'none'){
         formContainer.style.display = 'block';
     }else{
         formContainer.style.display = 'none';
     }
+
+    if(right.style.display === 'none'){
+        right.style.display = 'block';
+    }else{
+        right.style.display = 'none';
+    }    
+
+    
 }
 
 

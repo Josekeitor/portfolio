@@ -33,17 +33,20 @@
       
           
       <div class="right">
-        <h1 id="greeting-container" class="txt"></h1>
-        <p class="txt"> I am starting out in the tech industry and want to gain as much experience
-          as I can while contrubuting to companies with my diverse talents in programming.
-          Determined, team and goal oriented.
-        </p>
+        <div id="right-content">
+          <h1 id="greeting-container" class="txt"></h1>
+          <p class="txt"> I am starting out in the tech industry and want to gain as much experience
+            as I can while contrubuting to companies with my diverse talents in programming.
+            Determined, team and goal oriented.
+          </p>
 
         
       
-        <div class="button-cluster">
-        <button onclick="showProjects()" class="button txt">Projects</button>
-        <button onclick="showForm()" class="button txt">Contact me</button>
+          <div class="button-cluster">
+            <button onclick="showProjects()" class="button txt">Projects</button>
+            <button onclick="showForm()" class="button txt">Contact me</button>
+          </div>
+
         </div>
       
 
@@ -52,22 +55,25 @@
           </ul>
       
         </div>
-        <div id="contact-form-container">
+
+         <div id="contact-form-container" style="display: none;">
+             <button onclick="showForm()">X</button>
           <form action="/form-handler" method="POST">
-            <h1>Contact me</h1>
-            
-            <h3>Email</h3>
-            <input type="email" placeholder="Email" name="email">
-            <h3>Company</h3>
-            <input type="text" placeholder="Company" name="company">
-            <h3>Message</h3>
-            <textarea name="text-input"></textarea>
-            <input class="button" type="submit" value="Send"/>
-          </form>
-        </div>
-        
+              <h1 class="txt">Contact me</h1>
+              <h3 class="txt">Email</h3>
+              <input type="email" name="email">
+              <h3 class="txt">Company</h3>
+              <input type="text"  name="company">
+              <h3 class="txt">Message</h3>
+              <textarea name="text-input"></textarea>
+              <br>
+              <input class="button submit" type="submit" value="Send"/>
+            </form>
+          </div>
 
       </div>
+      
+         
      
       
       
