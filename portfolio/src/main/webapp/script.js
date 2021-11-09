@@ -40,14 +40,32 @@ function showProjects(){
 
 }
 
+// Display pop up form
+
+function showForm(){
+    const formContainer = document.getElementById('contact-form-container');
+    const right = document.getElementById('right-content');
+
+    if (formContainer.style.display === 'none'){
+        formContainer.style.display = 'block';
+    }else{
+        formContainer.style.display = 'none';
+    }
+
+    if(right.style.display === 'none'){
+        right.style.display = 'block';
+    }else{
+        right.style.display = 'none';
+    }    
+}
+
 // Fetch hello message from servlet
-
 async function sayHello(){
-    const response = await fetch('/hello');
-    const text = await response.text();
+  const response = await fetch('/hello');
+  const text = await response.text();
+  const greeting_container = document.getElementById('greeting-container');
 
-    const greeting_container = document.getElementById('greeting-container');
-    greeting_container.innerText = text;
+  greeting_container.innerText = text;
 }
 
 // Fetch project list from servlet
@@ -59,4 +77,26 @@ async function loadProjects(){
   for(var i =0; i<projects.length; i++){
       projectList.innerHTML += "<li> <a target= \"_blank\" href=\""+projects[i].url+"\">"+projects[i].name;
   }
+}
+
+// Translate text elements
+function requestTranslation() {
+  const textElements = document.querySelectorAll('.txt');
+  const languageCode = document.getElementById('language').value;
+        
+  for(const textElement of textElements){
+    const responseContainer = textElement;
+    const params = new URLSearchParams();
+
+    params.append('text', textElement.innerText);
+    params.append('languageCode', languageCode);
+        
+    fetch('/translate', {
+      method: 'POST',
+      body: params
+    }).then(response => response.text())
+      .then((translatedMessage) => {
+        responseContainer.innerText = translatedMessage;
+      });
+    }  
 }
